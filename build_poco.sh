@@ -19,7 +19,7 @@ echo Building POCO...
 
 if [ ! -d toolchain/ ]; then
   mkdir toolchain/
-  $ANDROID_NDK/build/tools/make-standalone-toolchain.sh --platform=android-8 --install-dir=./toolchain --ndk-dir=$ANDROID_NDK --system=linux-x86_64
+  $ANDROID_NDK/build/tools/make-standalone-toolchain.sh --platform=android-8 --install-dir=./toolchain --ndk-dir=$ANDROID_NDK --system=linux-x86_64 --toolchain=arm-linux-androideabi-$gcc_version
 fi
 ./configure --config=Android --no-samples --no-tests
 export PATH=$PATH:$1/toolchain/bin

@@ -97,27 +97,21 @@ if [[ $skip -ne 1 ]] ; then
 
     # Patch image_transport
     patch -p0 -N -d $prefix < patches/image_transport.patch
-    # Patch camera_calibration_parsers
-    patch -p0 -N -d $prefix < patches/camera_calibration_parsers.patch
-    # Patch camera_info_manager
-    patch -p0 -N -d $prefix < patches/camera_info_manager.patch
     # Patch class_loader
     patch -p0 -N -d $prefix < patches/class_loader.patch
     # Patch ros_comm (Accepted on upstream, need to update rosinstall when new release comes out)
     patch -p0 -N -d $prefix < patches/ros_comm.patch
     # Patch roslib (Accepted on upstream, need to update rosinstall when new release comes out)
     patch -p0 -N -d $prefix < patches/roslib.patch
-    # Patch dynamic_reconfigure
-    patch -p0 -N -d $prefix < patches/dynamic_reconfigure.patch
 fi
 
 
-run_cmd build_tinyxml $prefix/libs/tinyxml
-run_cmd copy_boost $prefix/libs/boost
-run_cmd build_poco $prefix/libs/poco-1.4.6p2
-run_cmd build_console_bridge $prefix/libs/console_bridge
-run_cmd build_eigen $prefix/libs/eigen
-run_cmd build_yaml_cpp $prefix/libs/yaml-cpp
+#run_cmd build_tinyxml $prefix/libs/tinyxml
+#run_cmd copy_boost $prefix/libs/boost
+#run_cmd build_poco $prefix/libs/poco-1.4.6p2
+#run_cmd build_console_bridge $prefix/libs/console_bridge
+#run_cmd build_eigen $prefix/libs/eigen
+#run_cmd build_yaml_cpp $prefix/libs/yaml-cpp
 
 
 if [[ $debugging -eq 1 ]];then
@@ -127,10 +121,11 @@ else
 fi
 
 run_cmd setup_ndk_project $prefix/roscpp_android_ndk
+
 # JAC: Disabled temporarily and replaced by application-specific Android.mk since
 # the library order resulting from create_android_mk doesn't work
 
-cp $my_loc/files/Android.mk.algron $prefix/roscpp_android_ndk/Android.mk
+cp $my_loc/files/Android.mk.algron.mavros $prefix/roscpp_android_ndk/Android.mk
 
 if [[ $debugging -eq 1 ]];then
     sed -i "s/#LOCAL_EXPORT_CFLAGS/LOCAL_EXPORT_CFLAGS/g" $prefix/roscpp_android_ndk/Android.mk
