@@ -197,10 +197,6 @@
     local-name: mavlink
     uri: https://github.com/mavlink/mavlink-gbp-release/archive/release/indigo/mavlink/2014.09.22-0.tar.gz
     version: mavlink-gbp-release-release-indigo-mavlink-2014.09.22-0
-- tar:
-    local-name: mavros/mavros
-    uri: https://github.com/mavlink/mavros-release/archive/release/indigo/mavros/0.8.0-0.tar.gz
-    version: mavros-release-release-indigo-mavros-0.8.0-0
 
 ### Need to use forked repository
 - git:
@@ -219,3 +215,7 @@
     local-name: rospack
     uri: https://github.com/algron/rospack.git
     version: android
+- git:
+    local-name: mavros
+    uri: https://github.com/garyservin/mavros.git
+    version: harcode-plugins
