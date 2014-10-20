@@ -106,12 +106,12 @@ if [[ $skip -ne 1 ]] ; then
 fi
 
 
-#run_cmd build_tinyxml $prefix/libs/tinyxml
-#run_cmd copy_boost $prefix/libs/boost
-#run_cmd build_poco $prefix/libs/poco-1.4.6p2
-#run_cmd build_console_bridge $prefix/libs/console_bridge
-#run_cmd build_eigen $prefix/libs/eigen
-#run_cmd build_yaml_cpp $prefix/libs/yaml-cpp
+run_cmd build_tinyxml $prefix/libs/tinyxml
+run_cmd copy_boost $prefix/libs/boost
+run_cmd build_poco $prefix/libs/poco-1.4.6p2
+run_cmd build_console_bridge $prefix/libs/console_bridge
+run_cmd build_eigen $prefix/libs/eigen
+run_cmd build_yaml_cpp $prefix/libs/yaml-cpp
 
 
 if [[ $debugging -eq 1 ]];then
