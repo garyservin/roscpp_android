@@ -197,5 +197,5 @@
     version: android
 - git:
     local-name: mavros
-    uri: https://github.com/garyservin/mavros.git
-    version: harcode-plugins
+    uri: https://github.com/algron/mavros.git
+    version: no-pluginlib
