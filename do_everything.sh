@@ -76,12 +76,9 @@ export RBA_TOOLCHAIN=$prefix/android.toolchain.cmake
 
 # Now get boost with a specialized build
 [ -d $prefix/libs/boost ] || run_cmd get_boost $prefix/libs
-[ -d $prefix/libs/poco-1.4.6p2 ] || run_cmd get_poco $prefix/libs
 [ -d $prefix/libs/tinyxml ] || run_cmd get_tinyxml $prefix/libs
-[ -d $prefix/libs/eigen ] || run_cmd get_eigen $prefix/libs
 [ -d $prefix/libs/catkin ] || run_cmd get_catkin $prefix/libs
 [ -d $prefix/libs/console_bridge ] || run_cmd get_console_bridge $prefix/libs
-[ -d $prefix/libs/yaml-cpp ] || run_cmd get_yaml_cpp $prefix/libs
 
 
 run_cmd build_catkin $prefix/libs/catkin
@@ -95,23 +92,25 @@ rm -rf $prefix/target/share/*
 if [[ $skip -ne 1 ]] ; then
     run_cmd get_ros_stuff $prefix/libs
 
-    # Patch image_transport
-    patch -p0 -N -d $prefix < patches/image_transport.patch
-    # Patch class_loader
-    patch -p0 -N -d $prefix < patches/class_loader.patch
-    # Patch ros_comm (Accepted on upstream, need to update rosinstall when new release comes out)
+    # Patch roscpp
+    patch -p0 -N -d $prefix < patches/roscpp.patch
+
+    # Patch ros_comm
     patch -p0 -N -d $prefix < patches/ros_comm.patch
-    # Patch roslib (Accepted on upstream, need to update rosinstall when new release comes out)
+
+    # Patch roslib
     patch -p0 -N -d $prefix < patches/roslib.patch
+
+    if [[ $debugging -eq 1 ]];then
+        # Patch ros_comm only for debugging
+        patch -p0 -N -d $prefix < patches/ros_comm_debug.patch
+    fi
 fi
 
 
 run_cmd build_tinyxml $prefix/libs/tinyxml
 run_cmd copy_boost $prefix/libs/boost
-run_cmd build_poco $prefix/libs/poco-1.4.6p2
 run_cmd build_console_bridge $prefix/libs/console_bridge
-run_cmd build_eigen $prefix/libs/eigen
-run_cmd build_yaml_cpp $prefix/libs/yaml-cpp
 
 
 if [[ $debugging -eq 1 ]];then
@@ -133,8 +132,6 @@ fi
 
 # run_cmd create_android_mk $prefix/target/catkin_ws/src $prefix/roscpp_android_ndk
 
-#( cd $prefix && run_cmd sample_app sample_app $prefix/roscpp_android_ndk )
-
 echo
 echo 'done.'
 echo 'summary of what just happened:'
@@ -142,6 +139,3 @@ echo '  target/      was used to build static libraries for ros software'
 echo '    include/   contains headers'
 echo '    lib/       contains static libraries'
 echo '  roscpp_android_ndk/     is a NDK sub-project that can be imported into an NDK app'
-echo
-echo 'you might now cd into sample_app/, run "ant debug install", and if an'
-echo 'android emulator is running, the app will be flashed onto it.'

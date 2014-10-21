@@ -1,7 +1,39 @@
 - tar:
+    local-name: actionlib
+    uri: https://github.com/ros-gbp/actionlib-release/archive/release/indigo/actionlib/1.11.2-0.tar.gz
+    version: actionlib-release-release-indigo-actionlib-1.11.2-0
+- tar:
+    local-name: angles
+    uri: https://github.com/ros-gbp/geometry_angles_utils-release/archive/release/indigo/angles/1.9.9-0.tar.gz
+    version: geometry_angles_utils-release-release-indigo-angles-1.9.9-0
+- tar:
     local-name: catkin
     uri: https://github.com/ros-gbp/catkin-release/archive/release/indigo/catkin/0.6.9-1.tar.gz
     version: catkin-release-release-indigo-catkin-0.6.9-1
+- tar:
+    local-name: cmake_modules
+    uri: https://github.com/ros-gbp/cmake_modules-release/archive/release/indigo/cmake_modules/0.3.1-0.tar.gz
+    version: cmake_modules-release-release-indigo-cmake_modules-0.3.1-0
+- tar:
+    local-name: common_msgs/actionlib_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/actionlib_msgs/1.11.4-0.tar.gz
+    version: common_msgs-release-release-indigo-actionlib_msgs-1.11.4-0
+- tar:
+    local-name: common_msgs/diagnostic_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/diagnostic_msgs/1.11.4-0.tar.gz
+    version: common_msgs-release-release-indigo-diagnostic_msgs-1.11.4-0
+- tar:
+    local-name: common_msgs/geometry_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/geometry_msgs/1.11.4-0.tar.gz
+    version: common_msgs-release-release-indigo-geometry_msgs-1.11.4-0
+- tar:
+    local-name: common_msgs/sensor_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/sensor_msgs/1.11.4-0.tar.gz
+    version: common_msgs-release-release-indigo-sensor_msgs-1.11.4-0
+- tar:
+    local-name: diagnostics/diagnostic_updater
+    uri: https://github.com/ros-gbp/diagnostics-release/archive/release/indigo/diagnostic_updater/1.8.4-0.tar.gz
+    version: diagnostics-release-release-indigo-diagnostic_updater-1.8.4-0
 - tar:
     local-name: gencpp
     uri: https://github.com/ros-gbp/gencpp-release/archive/release/indigo/gencpp/0.5.2-0.tar.gz
@@ -12,12 +44,16 @@
     version: genlisp-release-release-indigo-genlisp-0.4.14-0
 - tar:
     local-name: genmsg
-    uri: https://github.com/ros-gbp/genmsg-release/archive/release/indigo/genmsg/0.5.5-0.tar.gz
-    version: genmsg-release-release-indigo-genmsg-0.5.5-0
+    uri: https://github.com/ros-gbp/genmsg-release/archive/release/indigo/genmsg/0.5.6-0.tar.gz
+    version: genmsg-release-release-indigo-genmsg-0.5.6-0
 - tar:
     local-name: genpy
     uri: https://github.com/ros-gbp/genpy-release/archive/release/indigo/genpy/0.5.3-0.tar.gz
     version: genpy-release-release-indigo-genpy-0.5.3-0
+- tar:
+    local-name: mavlink
+    uri: https://github.com/mavlink/mavlink-gbp-release/archive/release/indigo/mavlink/2014.10.10-1.tar.gz
+    version: mavlink-gbp-release-release-indigo-mavlink-2014.10.10-1
 - tar:
     local-name: message_generation
     uri: https://github.com/ros-gbp/message_generation-release/archive/release/indigo/message_generation/0.2.10-0.tar.gz
@@ -26,10 +62,6 @@
     local-name: message_runtime
     uri: https://github.com/ros-gbp/message_runtime-release/archive/release/indigo/message_runtime/0.4.12-0.tar.gz
     version: message_runtime-release-release-indigo-message_runtime-0.4.12-0
-- tar:
-    local-name: cmake_modules
-    uri: https://github.com/ros-gbp/cmake_modules-release/archive/release/indigo/cmake_modules/0.3.1-0.tar.gz
-    version: cmake_modules-release-release-indigo-cmake_modules-0.3.1-0
 - tar:
     local-name: ros/rosbuild
     uri: https://github.com/ros-gbp/ros-release/archive/release/indigo/rosbuild/1.11.5-0.tar.gz
@@ -60,8 +92,8 @@
     version: ros_comm-release-release-indigo-rosconsole-1.11.9-0
 - tar:
     local-name: ros_comm/roscpp
-    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roscpp/1.11.3-0.tar.gz
-    version: ros_comm-release-release-indigo-roscpp-1.11.3-0
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roscpp/1.11.9-0.tar.gz
+    version: ros_comm-release-release-indigo-roscpp-1.11.9-0
 - tar:
     local-name: ros_comm/rosgraph
     uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosgraph/1.11.9-0.tar.gz
@@ -146,63 +178,11 @@
     local-name: std_msgs
     uri: https://github.com/ros-gbp/std_msgs-release/archive/release/indigo/std_msgs/0.5.9-1.tar.gz
     version: std_msgs-release-release-indigo-std_msgs-0.5.9-1
-- tar:
-    local-name: class_loader
-    uri: https://github.com/ros-gbp/class_loader-release/archive/release/indigo/class_loader/0.3.0-0.tar.gz
-    version: class_loader-release-release-indigo-class_loader-0.3.0-0
-- tar:
-    local-name: actionlib
-    uri: https://github.com/ros-gbp/actionlib-release/archive/release/indigo/actionlib/1.11.2-0.tar.gz
-    version: actionlib-release-release-indigo-actionlib-1.11.2-0
-- tar:
-    local-name: common_msgs/actionlib_msgs
-    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/actionlib_msgs/1.11.4-0.tar.gz
-    version: common_msgs-release-release-indigo-actionlib_msgs-1.11.4-0
-- tar:
-    local-name: common_msgs/geometry_msgs
-    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/geometry_msgs/1.11.4-0.tar.gz
-    version: common_msgs-release-release-indigo-geometry_msgs-1.11.4-0
-- tar:
-    local-name: common_msgs/sensor_msgs
-    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/sensor_msgs/1.11.4-0.tar.gz
-    version: common_msgs-release-release-indigo-sensor_msgs-1.11.4-0
-- tar:
-    local-name: angles
-    uri: https://github.com/ros-gbp/geometry_angles_utils-release/archive/release/indigo/angles/1.9.9-0.tar.gz
-    version: geometry_angles_utils-release-release-indigo-angles-1.9.9-0
-#- tar:
-#    local-name: image_common/image_transport
-#    uri: https://github.com/ros-gbp/image_common-release/archive/release/indigo/image_transport/1.11.4-1.tar.gz
-#    version: image_common-release-release-indigo-image_transport-1.11.4-1
-#- tar:
-#    local-name: vision_opencv/cv_bridge
-#    uri: https://github.com/ros-gbp/vision_opencv-release/archive/release/indigo/cv_bridge/1.11.5-0.tar.gz
-#    version: vision_opencv-release-release-indigo-cv_bridge-1.11.5-0
 
 
 ### Need to test/modify
-#- tar:
-#    local-name: ros_comm/roslz4
-#    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roslz4/1.11.9-0.tar.gz
-#    version: ros_comm-release-release-indigo-roslz4-1.11.9-0
-- tar:
-    local-name: common_msgs/diagnostic_msgs
-    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/diagnostic_msgs/1.11.4-0.tar.gz
-    version: common_msgs-release-release-indigo-diagnostic_msgs-1.11.4-0
-- tar:
-    local-name: diagnostics/diagnostic_updater
-    uri: https://github.com/ros-gbp/diagnostics-release/archive/release/indigo/diagnostic_updater/1.8.4-0.tar.gz
-    version: diagnostics-release-release-indigo-diagnostic_updater-1.8.4-0
-- tar:
-    local-name: mavlink
-    uri: https://github.com/mavlink/mavlink-gbp-release/archive/release/indigo/mavlink/2014.09.22-0.tar.gz
-    version: mavlink-gbp-release-release-indigo-mavlink-2014.09.22-0
 
 ### Need to use forked repository
-- git:
-    local-name: pluginlib
-    uri: https://github.com/algron/pluginlib.git
-    version: android
 - git:
     local-name: geometry
     uri: https://github.com/algron/geometry.git
